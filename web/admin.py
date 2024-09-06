@@ -1,3 +1,25 @@
 from django.contrib import admin
+from web.models import Category,Course,Language,Author
 
-# Register your models here.
+
+
+admin.site.register(Language)
+
+
+admin.site.register(Category)
+
+class Authoradmin(admin.ModelAdmin):
+     list_display=["id","name"]
+     search_fields=('name',)
+
+admin.site.register(Author,Authoradmin)
+
+
+class Courseadmin(admin.ModelAdmin):
+    list_display=["id","title","category","rating","formatted_course_price","duration_time"]
+    search_fields = ('title', 'author__name')
+    autocomplete_fields = ['author']
+
+
+admin.site.register(Course,Courseadmin)
+
