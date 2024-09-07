@@ -26,7 +26,7 @@ class Language(models.Model):
 
 class Category(models.Model):
     name=models.CharField(max_length=255)
-    logo=models.FileField(upload_to="category/")
+    logo=models.FileField(upload_to="category/icons/")
     
     class Meta:
         db_table="web_Category"
@@ -39,7 +39,7 @@ class Category(models.Model):
     
 class Author(models.Model):
     name=models.CharField(max_length=255)
-    profile_image=models.FileField(upload_to="course_authors/")
+    profile_image=models.FileField(upload_to="course/authors/")
 
     class Meta:
         db_table="web_Author"
@@ -53,13 +53,13 @@ class Author(models.Model):
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    card_title = models.CharField(max_length=30)
+    card_title = models.CharField(max_length=28)
     image = models.ImageField(upload_to="course/images/")
     thumbnail_image = models.ImageField(upload_to="course/thumbnailimages/")
     description = models.TextField()
     rating = models.FloatField(validators=[MinValueValidator(1.0), MaxValueValidator(5.0)])
     rated_customers_count = models.PositiveIntegerField(default=0)
-    duration_time = models.DurationField()
+    total_hours = models.DurationField()
     author = models.ForeignKey("web.Author", on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey("web.Category", on_delete=models.DO_NOTHING, null=True, blank=True, related_name="courses")
     languages = models.ManyToManyField("web.Language")
@@ -91,7 +91,7 @@ class Course(models.Model):
         ).exclude(id=self.id)[:4]
 
     def total_decimal_hours(self):
-        total_seconds = int(self.duration_time.total_seconds())
+        total_seconds = int(self.total_hours.total_seconds())
         hours, remainder = divmod(total_seconds, 3600)
         minutes, _ = divmod(remainder, 60)
         decimal_hours = hours + minutes / 60

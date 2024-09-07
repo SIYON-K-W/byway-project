@@ -21,7 +21,8 @@ def Course(request,pk):
     print(similar_courses)
     context={
         "login":True,
-        "course":course_content
+        "course":course_content,
+        "similar_courses":similar_courses
     }
     return render(request,"singlepage.html",context=context)
 

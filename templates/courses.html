@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section id="forcourses">
+	<section class="wrapper">
+		<section class="resusing-component-content">
+			{% if courses %} {% if slug == "all" %}
+			<h2>Courses</h2>
+			{% else %}
+			<h2>{{ slug }} Courses</h2>
+			{% endif %}
+			<div class="courses-cards">
+				{% for course in courses %}
+				<div
+					class="course-price-details card"
+					data-mrp="{{course.formatted_price}}"
+					data-discount="{{course.formatted_discount_percentage}}">
+					<a href="{% url 'web:coursepage' pk=course.pk %}">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/courses.png' %}"
+								alt="course image" />
+						</div>
+						<div class="course-details">
+							<ul>
+								<li>
+									<h5>{{course.card_title}}</h5>
+									<span>By {{course.author.name}}</span>
+								</li>
+								<li class="Ratings">
+									<div>
+										<img
+											src="{% static '/images/ratings.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span
+										>({{course.rated_customers_count}}
+										Ratings)</span
+									>
+								</li>
+								<li>
+									<span>
+										{{course.total_decimal_hours}} Total
+										Hours. {{course.number_of_lectures}}
+										Lectures. Beginner
+									</span>
+								</li>
+							</ul>
+							<h4></h4>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+			{% else %}
+			<div class="error">
+				<h6>oops! No courses found.</h6>
+			</div>
+			{% endif %}
+		</section>
+	</section>
+</section>
+{% endblock %}

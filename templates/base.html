@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% load static %}
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Byway</title>
+		<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+		<link rel="stylesheet" href="{% static '/css/font.css' %}" />
+		<link
+			rel="shortcut icon"
+			href="{% static '/images/logo.svg' %}"
+			type="image/x-icon" />
+	</head>
+	<body>
+		<header>
+			<section class="wrapper">
+				<section class="head">
+					<div class="logo">
+						<h1>
+							<a href="{% url 'web:homepage' %}">
+								<div class="logocontainer">
+									<img
+										src="{% static '/images/logo.svg' %}"
+										alt="Byway logo" />
+								</div>
+								<span>Byway</span>
+							</a>
+						</h1>
+					</div>
+					{% if login %}
+					<nav class="navbar-logined">
+						<ul>
+							<li>
+								<a href="/">
+									<img
+										src="{% static '/images/wishlist.svg' %}"
+										alt="Like" />
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<img
+										src="{% static '/images/cart.svg' %}"
+										alt="cart" />
+								</a>
+							</li>
+							<li>
+								<button>
+									<img
+										src="{% static '/images/bell.svg' %}"
+										alt="bell icon" />
+								</button>
+							</li>
+							<li><button>J</button></li>
+						</ul>
+					</nav>
+					{% else %}
+					<nav class="navbar">
+						<ul>
+							<li>
+								<a href="/">
+									<button>
+										<img
+											src="{% static '/images/cart.svg' %}"
+											alt="cart" />
+									</button>
+								</a>
+							</li>
+							<li>
+								<a href="/">Log In</a>
+							</li>
+							<li>
+								<a href="/">Sign Up</a>
+							</li>
+						</ul>
+					</nav>
+					{% endif %}
+				</section>
+			</section>
+		</header>
+		{% block content %} {% endblock %}
+		<footer>
+			<section class="wrapper">
+				<section id="footer-content">
+					<div class="main">
+						<div class="imagecontainer">
+							<h1>
+								<a href="{% url 'web:homepage' %}">
+									<img
+										src="{% static '/images/footerlogo.svg' %}"
+										alt="logo" />
+								</a>
+							</h1>
+						</div>
+						<p>
+							Empowering learners through accessible and engaging
+							online education. <br />
+							Byway is a leading online learning platform
+							dedicated to providing high-quality, flexible, and
+							affordable educational experiences.
+						</p>
+					</div>
+					<div class="get-help">
+						<h5>Get Help</h5>
+						<a href="/">Contact Us</a>
+						<a href="/">Latest Articles</a>
+						<a href="/">FAQ</a>
+					</div>
+					<div class="programs">
+						<h5>Programs</h5>
+						<a href="/">Art & Design</a>
+						<a href="/">Business</a>
+						<a href="/">IT & Software</a>
+						<a href="/">Languages</a>
+						<a href="/">Programming</a>
+					</div>
+					<div class="Contact-us">
+						<div class="inner">
+							<h5>Contact Us</h5>
+							<p>Address: 123 Main Street, Anytown, CA 12345</p>
+							<a href="tel:+(123) 456-7890"
+								>Tel: +(123) 456-7890</a
+							>
+							<a href="mailto:bywayedu@webkul.in"
+								>Mail: bywayedu@webkul.in</a
+							>
+						</div>
+						<div class="logos">
+							<img
+								src="{% static '/images/social-media.svg' %}"
+								alt="contact icons" />
+						</div>
+					</div>
+				</section>
+			</section>
+		</footer>
+		<script src="{% static '/js/script.js' %}"></script>
+	</body>
+</html>

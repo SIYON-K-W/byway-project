@@ -1,0 +1,505 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section id="spotlight">
+	<section class="wrapper">
+		<section class="content">
+			<div class="content-left">
+				<div>
+					<h1>Unlock Your Potential with Byway</h1>
+					<p>
+						Welcome to Byway, where learning knows no bounds. We
+						believe that education is the key to personal and
+						professional growth, and we're here to guide you on your
+						journey to success.
+					</p>
+				</div>
+
+				<a href="/">Start your instructor journey</a>
+			</div>
+			<div class="content-right">
+				<img
+					src="{% static '/images/spotlight.png' %}"
+					alt="join our community" />
+			</div>
+		</section>
+	</section>
+</section>
+<section id="statistics">
+	<section class="background">
+		<section class="wrapper">
+			<section class="content">
+				<ul>
+					<li>
+						<h2>250+</h2>
+						<span>Courses by our best mentors</span>
+					</li>
+					<li></li>
+					<li>
+						<h2>1000+</h2>
+						<span>Courses by our best mentors</span>
+					</li>
+					<li></li>
+					<li>
+						<h2>15+</h2>
+						<span>Courses by our best mentors</span>
+					</li>
+					<li></li>
+					<li>
+						<h2>2200+</h2>
+						<span>Courses by our best mentors</span>
+					</li>
+				</ul>
+			</section>
+		</section>
+	</section>
+</section>
+<section id="top-categories">
+	<section class="wrapper">
+		<section class="content">
+			<div class="head">
+				<h3>Top Categories</h3>
+				<a href="/">See All</a>
+			</div>
+			<div class="Categories-cards">
+				{% for category in categories %}
+				<div class="card">
+					<a
+						href="{% url 'web:coursespage' category=category.name %}">
+						<div class="imagebackground">
+							<div class="imagecontainer">
+								<img
+									src="{{category.logo.url}}"
+									alt="Astrology" />
+							</div>
+						</div>
+						<h4>{{category.name}}</h4>
+						<p>{{category.total_courses}} Courses</p>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</section>
+</section>
+<section id="top-courses">
+	<section class="wrapper">
+		<section class="content">
+			<div class="head">
+				<h3>Top Courses</h3>
+				<a href="{% url 'web:coursespage' category='all' %}">See All</a>
+			</div>
+			<div class="courses-cards">
+				{% for course in courses %}
+				<div
+					class="course-price-details card"
+					data-mrp="{{course.formatted_price}}"
+					data-discount="{{course.formatted_discount_percentage}}">
+					<a href="{% url 'web:coursepage' pk=course.pk %}">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/courses.png' %}"
+								alt="course image" />
+						</div>
+						<div class="course-details">
+							<ul>
+								<li>
+									<h5>{{course.card_title}}</h5>
+									<span>By {{course.author}}</span>
+								</li>
+								<li class="Ratings">
+									<div>
+										<img
+											src="{% static '/images/ratings.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span
+										>({{course.rated_customers_count}}
+										Ratings)</span
+									>
+								</li>
+								<li>
+									<span>
+										{{course.total_decimal_hours}} Total
+										Hours. 155 Lectures. Beginner
+									</span>
+								</li>
+							</ul>
+							<h4></h4>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</section>
+</section>
+<section id="top-instructors">
+	<section class="wrapper">
+		<section class="content">
+			<div class="head">
+				<h3>Top Instructors</h3>
+				<a href="/">See All</a>
+			</div>
+			<div class="instructors-cards">
+				<div class="card">
+					<a href="/">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/model-5.jpg' %}"
+								alt="course image" />
+						</div>
+						<ul class="course-details">
+							<li>
+								<h5>Ronald Richards</h5>
+								<span>UI/UX Designer</span>
+							</li>
+							<li></li>
+							<li class="Ratings">
+								<div class="star">
+									<div>
+										<img
+											src="{% static '/images/star.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span>4.9</span>
+								</div>
+								<p>2400 Students</p>
+							</li>
+						</ul>
+					</a>
+				</div>
+				<div class="card">
+					<a href="/">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/model-5.jpg' %}"
+								alt="course image" />
+						</div>
+						<ul class="course-details">
+							<li>
+								<h5>Ronald Richards</h5>
+								<span>UI/UX Designer</span>
+							</li>
+							<li></li>
+							<li class="Ratings">
+								<div class="star">
+									<div>
+										<img
+											src="{% static '/images/star.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span>4.9</span>
+								</div>
+								<p>2400 Students</p>
+							</li>
+						</ul>
+					</a>
+				</div>
+				<div class="card">
+					<a href="/">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/model-5.jpg' %}"
+								alt="course image" />
+						</div>
+						<ul class="course-details">
+							<li>
+								<h5>Ronald Richards</h5>
+								<span>UI/UX Designer</span>
+							</li>
+							<li></li>
+							<li class="Ratings">
+								<div class="star">
+									<div>
+										<img
+											src="{% static '/images/star.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span>4.9</span>
+								</div>
+								<p>2400 Students</p>
+							</li>
+						</ul>
+					</a>
+				</div>
+				<div class="card">
+					<a href="/">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/model-5.jpg' %}"
+								alt="course image" />
+						</div>
+						<ul class="course-details">
+							<li>
+								<h5>Ronald Richards</h5>
+								<span>UI/UX Designer</span>
+							</li>
+							<li></li>
+							<li class="Ratings">
+								<div class="star">
+									<div>
+										<img
+											src="{% static '/images/star.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span>4.9</span>
+								</div>
+								<p>2400 Students</p>
+							</li>
+						</ul>
+					</a>
+				</div>
+				<div class="card">
+					<a href="/">
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/model-5.jpg' %}"
+								alt="course image" />
+						</div>
+						<ul class="course-details">
+							<li>
+								<h5>Ronald Richards</h5>
+								<span>UI/UX Designer</span>
+							</li>
+							<li></li>
+							<li class="Ratings">
+								<div class="star">
+									<div>
+										<img
+											src="{% static '/images/star.svg' %}"
+											alt="ratings star" />
+									</div>
+									<span>4.9</span>
+								</div>
+								<p>2400 Students</p>
+							</li>
+						</ul>
+					</a>
+				</div>
+			</div>
+		</section>
+	</section>
+</section>
+<section class="testmonial">
+	<section class="content">
+		<section class="wrapper">
+			<div class="head">
+				<h3>What Our Customer Say <br />About Us</h3>
+				<div class="buttons">
+					<button onclick="scrollleft()">
+						<img
+							src="{% static '/images/short-arrow-left.svg' %}"
+							alt="leftbutton" />
+					</button>
+					<button onclick="scrollright()">
+						<img
+							src="{% static '/images/short-arrow-right.svg' %}"
+							alt="rightbutton" />
+					</button>
+				</div>
+			</div>
+		</section>
+		<div class="testmonial-cards">
+			<div class="cards">
+				<ul>
+					<li class="doubleqoutes-container">
+						<img
+							src="{% static '/images/quotes.svg' %}"
+							alt="double-quotes" />
+					</li>
+					<li>
+						<p>
+							"Byway's tech courses are top-notch! As someone
+							who's always looking to stay ahead in the rapidly
+							evolving tech world, I appreciate the up-to-date
+							content and engaging multimedia.
+						</p>
+					</li>
+					<li>
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/Ellipse.png' %}"
+								alt="cutomer image" />
+						</div>
+						<div>
+							<h5>Jane Doe</h5>
+							<span>Designer</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cards">
+				<ul>
+					<li class="doubleqoutes-container">
+						<img
+							src="{% static '/images/quotes.svg' %}"
+							alt="double-quotes" />
+					</li>
+					<li>
+						<p>
+							"Byway's tech courses are top-notch! As someone
+							who's always looking to stay ahead in the rapidly
+							evolving tech world, I appreciate the up-to-date
+							content and engaging multimedia.
+						</p>
+					</li>
+					<li>
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/Ellipse.png' %}"
+								alt="cutomer image" />
+						</div>
+						<div>
+							<h5>Jane Doe</h5>
+							<span>Designer</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cards">
+				<ul>
+					<li class="doubleqoutes-container">
+						<img
+							src="{% static '/images/quotes.svg' %}"
+							alt="double-quotes" />
+					</li>
+					<li>
+						<p>
+							"Byway's tech courses are top-notch! As someone
+							who's always looking to stay ahead in the rapidly
+							evolving tech world, I appreciate the up-to-date
+							content and engaging multimedia.
+						</p>
+					</li>
+					<li>
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/Ellipse.png' %}"
+								alt="cutomer image" />
+						</div>
+						<div>
+							<h5>Jane Doe</h5>
+							<span>Designer</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cards">
+				<ul>
+					<li class="doubleqoutes-container">
+						<img
+							src="{% static '/images/quotes.svg' %}"
+							alt="double-quotes" />
+					</li>
+					<li>
+						<p>
+							"Byway's tech courses are top-notch! As someone
+							who's always looking to stay ahead in the rapidly
+							evolving tech world, I appreciate the up-to-date
+							content and engaging multimedia.
+						</p>
+					</li>
+					<li>
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/Ellipse.png' %}"
+								alt="cutomer image" />
+						</div>
+						<div>
+							<h5>Jane Doe</h5>
+							<span>Designer</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cards">
+				<ul>
+					<li class="doubleqoutes-container">
+						<img
+							src="{% static '/images/quotes.svg' %}"
+							alt="double-quotes" />
+					</li>
+					<li>
+						<p>
+							"Byway's tech courses are top-notch! As someone
+							who's always looking to stay ahead in the rapidly
+							evolving tech world, I appreciate the up-to-date
+							content and engaging multimedia.
+						</p>
+					</li>
+					<li>
+						<div class="imagecontainer">
+							<img
+								src="{% static '/images/Ellipse.png' %}"
+								alt="cutomer image" />
+						</div>
+						<div>
+							<h5>Jane Doe</h5>
+							<span>Designer</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</section>
+<section id="features">
+	<section class="wrapper">
+		<section class="content">
+			<div class="top">
+				<div class="imagecontainer">
+					<img
+						src="{% static '/images/model-4.jpg' %}"
+						alt="instructer image" />
+				</div>
+				<div class="details">
+					<div>
+						<h5>Become an Instructor</h5>
+						<p>
+							Instructors from around the world teach millions of
+							students on Byway. We provide the tools and skills
+							to teach what you love.
+						</p>
+					</div>
+					<a href="/">
+						<button>
+							<span>Start Your Instructor Journey</span>
+							<div class="arrow">
+								<img
+									src="{% static '/images/arrow-right.svg' %}"
+									alt="arrow-right" />
+							</div>
+						</button>
+					</a>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="imagecontainer">
+					<img
+						src="{% static '/images/model-6.jpg' %}"
+						alt="instructer image" />
+				</div>
+				<div class="details">
+					<div>
+						<h5>Transform your life through education</h5>
+						<p>
+							Learners around the world are launching new careers,
+							advancing in their fields, and enriching their
+							lives.
+						</p>
+					</div>
+					<a href="/">
+						<button>
+							<span>Checkout Courses</span>
+							<div class="arrow">
+								<img
+									src="{% static '/images/arrow-right.svg' %}"
+									alt="arrow-right" />
+							</div>
+						</button>
+					</a>
+				</div>
+			</div>
+		</section>
+	</section>
+</section>
+{% endblock %}

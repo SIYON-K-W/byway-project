@@ -16,7 +16,7 @@ admin.site.register(Author,Authoradmin)
 
 
 class Courseadmin(admin.ModelAdmin):
-    list_display=["id","title","category","rating","formatted_course_price","duration_time"]
+    list_display=["id","title","category","rating","formatted_course_price","total_hours"]
     search_fields = ('title', 'author__name')
     autocomplete_fields = ['author']
 
