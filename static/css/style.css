@@ -434,6 +434,7 @@ header .wrapper .head .navbar ul li button img {
 	font-size: 14px;
 	font-weight: 400;
 	color: #334155;
+	text-transform: capitalize;
 }
 
 #top-courses
@@ -460,6 +461,30 @@ header .wrapper .head .navbar ul li button img {
 	flex-direction: row;
 	gap: 8px;
 	align-items: center;
+}
+#top-courses
+	.wrapper
+	.content
+	.courses-cards
+	.card
+	.course-details
+	ul
+	.Ratings
+	.ratingfullstar {
+	width: 100px;
+	height: 20px;
+}
+#top-courses
+	.wrapper
+	.content
+	.courses-cards
+	.card
+	.course-details
+	ul
+	.Ratings
+	.ratingfullstar
+	img {
+	width: 100%;
 }
 
 #top-courses
@@ -2536,6 +2561,7 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	font-size: 14px;
 	font-weight: 400;
 	color: #334155;
+	text-transform: capitalize;
 }
 
 .resusing-component-content .courses-cards .card .course-details .Ratings span {
@@ -2549,7 +2575,26 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	gap: 8px;
 	align-items: center;
 }
-
+.resusing-component-content
+	.courses-cards
+	.card
+	.course-details
+	ul
+	li.Ratings
+	.ratingfullstar {
+	width: 100px;
+	height: 20px;
+}
+.resusing-component-content
+	.courses-cards
+	.card
+	.course-details
+	ul
+	li.Ratings
+	.ratingfullstar
+	img {
+	width: 100%;
+}
 .resusing-component-content
 	.courses-cards
 	.card

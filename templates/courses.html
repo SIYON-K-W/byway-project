@@ -16,7 +16,7 @@
 					<a href="{% url 'web:coursepage' pk=course.pk %}">
 						<div class="imagecontainer">
 							<img
-								src="{% static '/images/courses.png' %}"
+								src="{{course.image.url}}"
 								alt="course image" />
 						</div>
 						<div class="course-details">
@@ -26,7 +26,7 @@
 									<span>By {{course.author.name}}</span>
 								</li>
 								<li class="Ratings">
-									<div>
+									<div class="ratingfullstar">
 										<img
 											src="{% static '/images/ratings.svg' %}"
 											alt="ratings star" />

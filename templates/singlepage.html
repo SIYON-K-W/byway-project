@@ -1,4 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
+<!-- prettier ignore -->
+{% load humanize %}
 <section id="course-preview">
 	<section class="wrapper">
 		<section class="content">
@@ -301,9 +303,14 @@
 										src="{% static '/images/star.svg' %}"
 										alt="star" />
 								</div>
-								<h2>4.6</h2>
+								<h2>{{course.rating}}</h2>
 							</li>
-							<li><span>146,951 reviews</span></li>
+							<li>
+								<span
+									>{{course.rated_customers_count|intcomma}}
+									reviews</span
+								>
+							</li>
 						</ul>
 						<ul class="rating-count">
 							<li>
@@ -640,7 +647,7 @@
 					<a href="{% url 'web:coursepage' pk=course.pk %}">
 						<div class="imagecontainer">
 							<img
-								src="{% static '/images/courses.png' %}"
+								src="{{course.image.url}}"
 								alt="course image" />
 						</div>
 						<div class="course-details">
@@ -650,7 +657,7 @@
 									<span>By {{course.author.name}}</span>
 								</li>
 								<li class="Ratings">
-									<div>
+									<div class="ratingfullstar">
 										<img
 											src="{% static '/images/ratings.svg' %}"
 											alt="ratings star" />

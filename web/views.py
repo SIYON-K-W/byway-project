@@ -18,7 +18,6 @@ def Course(request,pk):
     print(pk)
     course_content=get_object_or_404(Coursemodel.objects.filter(pk=pk))
     similar_courses = course_content.get_similar_courses()
-    print(similar_courses)
     context={
         "login":True,
         "course":course_content,

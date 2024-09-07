@@ -96,7 +96,7 @@
 					<a href="{% url 'web:coursepage' pk=course.pk %}">
 						<div class="imagecontainer">
 							<img
-								src="{% static '/images/courses.png' %}"
+								src="{{course.image.url}}"
 								alt="course image" />
 						</div>
 						<div class="course-details">
@@ -106,7 +106,7 @@
 									<span>By {{course.author}}</span>
 								</li>
 								<li class="Ratings">
-									<div>
+									<div class="ratingfullstar">
 										<img
 											src="{% static '/images/ratings.svg' %}"
 											alt="ratings star" />
@@ -119,7 +119,8 @@
 								<li>
 									<span>
 										{{course.total_decimal_hours}} Total
-										Hours. 155 Lectures. Beginner
+										Hours. {{course.number_of_lectures}}
+										Lectures. Beginner
 									</span>
 								</li>
 							</ul>
