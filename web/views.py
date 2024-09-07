@@ -15,7 +15,6 @@ def Home(request):
 
 
 def Course(request,pk):
-    print(pk)
     course_content=get_object_or_404(Coursemodel.objects.filter(pk=pk))
     similar_courses = course_content.get_similar_courses()
     context={
