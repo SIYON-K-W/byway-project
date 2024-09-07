@@ -3,7 +3,7 @@ from django.db.models import Count
 from web.models import Course as Coursemodel, Category
 
 def Home(request):
-    courses = Coursemodel.objects.all()[:4]
+    courses = Coursemodel.objects.all().order_by('-rating', '-rated_customers_count')[:4]
     categories = Category.objects.annotate(total_courses=Count('courses'))
 
     context = {
@@ -29,7 +29,7 @@ def Course(request,pk):
 
 def Courses(request,category):
     if(category=="all"):
-        courses_list= Coursemodel.objects.all()
+        courses_list= Coursemodel.objects.all().order_by('-rating', '-rated_customers_count')
     else:    
        courses_list = Coursemodel.objects.filter(category__name=category)
     print(courses_list)

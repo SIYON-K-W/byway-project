@@ -87,8 +87,8 @@ class Course(models.Model):
 
     def get_similar_courses(self):
         return Course.objects.filter(
-            category=self.category 
-        ).exclude(id=self.id)[:4]
+            category=self.category
+        ).exclude(id=self.id).order_by('?')[:4]
 
     def total_decimal_hours(self):
         total_seconds = int(self.total_hours.total_seconds())
@@ -118,7 +118,7 @@ class Course(models.Model):
     
     class Meta:
         db_table="web_Course"
-        ordering=["id"]
+        ordering=["-id"]
         verbose_name="course"
         verbose_name_plural="courses"
 

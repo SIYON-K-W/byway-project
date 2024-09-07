@@ -29,7 +29,7 @@
 				</ul>
 				<div class="main-image">
 					<img
-						src="{% static '/images/img.jpg' %}"
+						src="{{course.thumbnail_image.url}}"
 						alt="course-image" />
 				</div>
 				<div class="main-details">
@@ -81,10 +81,16 @@
 					</div>
 					<div class="responsive-card">
 						<ul class="buying-details">
-							<li>
-								<h3>$49.5</h3>
-								<h5><del>$99.5</del></h5>
-								<h4>50% Off</h4>
+							<li
+								data-mrp="{{course.formatted_price}}"
+								data-discount="{{course.formatted_discount_percentage}}"
+								class="pricebox">
+								<h3 class="price"></h3>
+								<h5><del>${{course.formatted_price}}</del></h5>
+								<h4>
+									{{course.formatted_discount_percentage}}%
+									Off
+								</h4>
 							</li>
 							<li>
 								<button>Add To Cart</button
@@ -110,8 +116,8 @@
 						<li
 							data-mrp="{{course.formatted_price}}"
 							data-discount="{{course.formatted_discount_percentage}}"
-							id="pricebox">
-							<h3 id="price"></h3>
+							class="pricebox">
+							<h3 class="price"></h3>
 							<h5><del>${{course.formatted_price}}</del></h5>
 							<h4>
 								{{course.formatted_discount_percentage}}% Off

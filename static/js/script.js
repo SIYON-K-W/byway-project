@@ -42,23 +42,32 @@ Array.from(courseCards).forEach((card) => {
 
 try {
 	document.addEventListener("DOMContentLoaded", () => {
-		const data = document.getElementById("pricebox");
+		const data = document.getElementsByClassName("pricebox");
 
-		if (data && data.dataset) {
-			const mrp = parseFloat(data.dataset.mrp);
-			const discountPercentage = parseFloat(data.dataset.discount);
+		if (data) {
+			Array.from(data).forEach((card) => {
+				const mrp = parseFloat(card.dataset.mrp);
+				const discountPercentage = parseFloat(card.dataset.discount);
 
-			let coursePrice = mrp - mrp * (discountPercentage / 100);
+				let coursePrice = mrp - mrp * (discountPercentage / 100);
 
-			coursePrice = Math.round(coursePrice * 100) / 100;
+				coursePrice = Math.round(coursePrice * 100) / 100;
 
-			if (coursePrice === Math.floor(coursePrice)) {
-				coursePrice = parseInt(coursePrice, 10);
-			} else {
-				coursePrice = parseFloat(coursePrice.toFixed(2));
-			}
+				if (coursePrice === Math.floor(coursePrice)) {
+					coursePrice = parseInt(coursePrice, 10);
+				} else {
+					coursePrice = parseFloat(coursePrice.toFixed(2));
+				}
 
-			document.getElementById("price").textContent = `$${coursePrice}`;
+				const priceElement = card.querySelector(".price");
+				console.log(priceElement);
+
+				if (priceElement) {
+					priceElement.textContent = `$${coursePrice}`;
+				} else {
+					console.error("Price element not found in card:", card);
+				}
+			});
 		} else {
 			console.log("not loaded");
 		}

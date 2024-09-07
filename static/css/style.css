@@ -28,12 +28,6 @@ header .wrapper .head {
 	justify-content: space-between;
 }
 
-header .wrapper .head .logo {
-}
-
-header .wrapper .head .logo h1 {
-}
-
 header .wrapper .head .logo h1 a {
 	display: flex;
 	align-items: center;
@@ -124,8 +118,6 @@ header .wrapper .head .navbar ul li:last-child a {
 	background-color: #334155;
 	color: #fff;
 }
-header .wrapper .head .navbar ul li {
-}
 
 header .wrapper .head .navbar ul li:first-child a {
 	display: block;
@@ -140,9 +132,6 @@ header .wrapper .head .navbar ul li button img {
 
 #spotlight {
 	padding: 30px 0px;
-}
-
-#spotlight .wrapper {
 }
 
 #spotlight .wrapper .content {
@@ -206,11 +195,6 @@ header .wrapper .head .navbar ul li button img {
 	background-color: #f8fafc;
 	padding: 40px 0px;
 }
-#statistics .wrapper {
-}
-
-#statistics .wrapper .content {
-}
 
 #statistics .wrapper .content ul {
 	display: flex;
@@ -242,9 +226,6 @@ header .wrapper .head .navbar ul li button img {
 }
 #top-categories {
 	padding: 30px 0px;
-}
-
-#top-categories .wrapper {
 }
 
 #top-categories .wrapper .content {
@@ -346,9 +327,6 @@ header .wrapper .head .navbar ul li button img {
 }
 #top-courses {
 	padding: 30px 0px;
-}
-
-#top-courses .wrapper {
 }
 
 #top-courses .wrapper .content {
@@ -509,9 +487,6 @@ header .wrapper .head .navbar ul li button img {
 }
 #top-instructors {
 	padding: 30px 0px;
-}
-
-#top-instructors .wrapper {
 }
 
 #top-instructors .wrapper .content {
@@ -721,9 +696,6 @@ header .wrapper .head .navbar ul li button img {
 	gap: 24px;
 }
 
-.testmonial .content .wrapper {
-}
-
 .testmonial .content .wrapper .head {
 	display: flex;
 	justify-content: space-between;
@@ -735,9 +707,6 @@ header .wrapper .head .navbar ul li button img {
 	font-weight: 600;
 	line-height: 33.6px;
 	color: #000000;
-}
-
-.testmonial .content .wrapper .head h3 br {
 }
 
 .testmonial .content .wrapper .head .buttons {
@@ -837,9 +806,6 @@ header .wrapper .head .navbar ul li button img {
 
 #features {
 	padding: 60px 0px;
-}
-
-#features .wrapper {
 }
 
 #features .wrapper .content {
@@ -1007,9 +973,6 @@ footer {
 	padding: 80px 0px;
 }
 
-footer .wrapper {
-}
-
 footer .wrapper #footer-content {
 	display: flex;
 	justify-content: space-between;
@@ -1048,9 +1011,6 @@ footer .wrapper #footer-content .main p {
 	font-weight: 400;
 	line-height: 21px;
 	color: #cbd5e1;
-}
-
-footer .wrapper #footer-content .main p br {
 }
 
 footer .wrapper #footer-content .get-help {
@@ -1124,9 +1084,6 @@ footer .wrapper #footer-content .Contact-us .logos img {
 #course-preview {
 	padding: 40px 0px 29px 0px;
 	background: #f8fafc;
-}
-
-#course-preview .wrapper {
 }
 
 #course-preview .wrapper .content {
@@ -1539,6 +1496,7 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	font-weight: 400;
 	line-height: 21px;
 	color: #2563eb;
+	text-transform: capitalize;
 }
 #course-preview
 	.wrapper
@@ -1620,6 +1578,7 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	.imagecontainer
 	img {
 	width: 100%;
+	border-radius: 8px;
 }
 
 #course-preview .wrapper .content .content-right .main-part ul {
@@ -1729,9 +1688,6 @@ footer .wrapper #footer-content .Contact-us .logos img {
 #about-course {
 	padding-top: 40px;
 	padding-bottom: 18px;
-}
-
-#about-course .wrapper {
 }
 
 #about-course .wrapper .whole-content {
@@ -2507,6 +2463,7 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	font-weight: 600;
 	line-height: 28px;
 	color: #0f172a;
+	text-transform: capitalize;
 }
 
 .resusing-component-content .courses-cards {
@@ -2804,8 +2761,6 @@ footer .wrapper #footer-content .Contact-us .logos img {
 
 	#features .wrapper .content .bottom .details div p {
 		text-align: center;
-	}
-	.resusing-component-content .courses-cards .card {
 	}
 	#top-courses .wrapper .content .head h3 {
 		font-size: 22px;
