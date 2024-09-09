@@ -4,7 +4,7 @@ from web.models import Course as Coursemodel, Category
 
 def Home(request):
     courses = Coursemodel.objects.all().order_by('-rating', '-rated_customers_count')[:4]
-    categories = Category.objects.annotate(total_courses=Count('courses'))
+    categories = Category.objects.annotate(total_courses=Count('courses'))[:4]
     context = {
         "login": False,
         "courses": courses,

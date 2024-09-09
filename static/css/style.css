@@ -3133,6 +3133,9 @@ footer .wrapper #footer-content .Contact-us .logos img {
 	.testmonial .content .testmonial-cards .cards {
 		min-width: 304px;
 	}
+	#top-courses .wrapper .content .courses-cards .card {
+		min-width: 287.52px;
+	}
 	#about-course
 		.wrapper
 		.whole-content
